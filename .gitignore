@@ -13,6 +13,9 @@ package-lock.json
 # They should be uploaded to GitHub releases instead.
 main.js
 
+# Don't include the distribution folder in the repo.
+dist
+
 # Exclude sourcemaps
 *.map
 
