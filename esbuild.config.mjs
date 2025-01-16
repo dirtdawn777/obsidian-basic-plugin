@@ -18,7 +18,11 @@ const dir = prod ? "./dist" : "./";
 const outfile = join(dir, "main.js");
 const isWatching = process.argv.includes('--watch');
 
-if (!prod) {
+if (prod) {
+  copyFileSync("./main.js", join(dir, "main.js"));
+  copyFileSync("./manifest.json", join(dir, "manifest.json"));
+}
+else {
   copyFileSync("./manifest.json", join(dir, "manifest.json"));
   writeFileSync(
     join(dir, ".hotreload"),
